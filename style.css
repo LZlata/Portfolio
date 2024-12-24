@@ -1,0 +1,343 @@
+/* подключение шрифта для заголовков */
+@font-face {
+    font-family: Roboto-Medium;
+    src: url(fonts/Roboto-Medium.ttf);
+}
+
+/* подключение основного шрифта */
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(fonts/Roboto-Regular.ttf);
+}
+
+/* убираем внешние и внутренние отступы у всех элементов */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* убираем подчеркивание у всех ссылок */
+a{
+    text-decoration: none;
+}
+
+/* убираем все авто настройки ползунков */
+input[type="range"]{
+    outline: none;
+    -webkit-appearance: none;
+        -moz-appearance: none;
+            appearance: none;
+}
+
+/* шрифт и расположение блоков во всем документе */
+body{
+    font-family: Roboto-Regular, sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* центрирование элементов шапки */
+header{
+    text-align: center;
+}
+
+/* отступы логотипа */
+.logo{
+    margin-top: 48px;
+    margin-bottom: 28px;
+}
+
+/* позиционирование картинки у логотипа */
+.logo_item{
+    position: relative;
+    right: 53px;
+    z-index: 1;
+}
+
+/* меню "хлебные крошки" */
+.list a{
+    font-size: 13px;
+    line-height: 16px;
+    color: #999999;
+    border-bottom: 2px solid #e6edff;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* заголовок */
+.heading{
+    padding: 24px 0;
+    font-family: Roboto-Medium, sans-serif;
+    font-size: clamp(2rem, 0.5rem + 2.5vw, 3.5rem); /*адаптация от 32px до 56px; rem=16px*/
+    line-height: clamp(2.62rem, 0.5rem + 2.5vw, 4.5rem); /*адаптация от 42px до 72px*/
+    letter-spacing: -0.01em; /*интервал букв */
+}
+
+/* стилизация ковычек заголовка */
+.heading q{
+    quotes: "\00ab" "\00bb";
+}
+
+/* отступы основного меню */
+.menu{
+    padding: 18px;
+}
+
+/* ссылки основного меню */
+.menu a{
+    font-size: 16px;
+    line-height: 24px;
+    color: #666666;
+    margin-right: 24px;
+    cursor: pointer;
+}
+
+/* ссылки основного меню при наведении*/
+.menu a:hover{
+    color: #5A8CF1;
+    border-bottom: 2px solid #5A8CF1;
+    padding-bottom: 16px;
+}
+
+/* основной блок */
+.main{
+    background-color: #F5F5F8;
+    border-radius: 16px;
+    padding: 48px 0;
+    margin: 0 calc(50% - 512px);
+}
+
+@media (max-width: 524px) {
+    .main{
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/* слоган/призыв к действию */
+.slogan{
+    font-family: Roboto-Medium, sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    text-align: center;
+}
+
+/* блок email */
+.email{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 18px 100px 100px 18px;
+    margin: 24px 48px 16px;
+}
+    /* поле ввода email */
+    .email input{
+        flex-grow: 1; /* занимаемое пространство*/
+        color: #666666;
+        font-size: 16px;
+        line-height: 24px;
+        border: none;
+        margin: 0 16px;
+    }
+    /* кнопка "Подписаться" */
+    .email button{   /*адаптировать другая кнопка*/
+        background-color: #316FEE;
+        color: white;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        padding: 16px 32px;
+        border-radius: 100px;
+        border: none;
+        cursor: pointer;
+    }
+
+/* блок "все рассылки" */
+.all_mailings{
+    display: flex;
+    gap: 8px;
+    margin-left: 48px;
+}
+    /* ползунок блока "все рассылки" */
+    .range {
+        width: 32px;
+        height: 16px;
+        border-radius: 100px;
+        padding: 1px;
+        overflow: hidden;
+    }
+        /* цвет для трека */
+        .range::-webkit-slider-runnable-track {
+            background-color: #DCDCDC;
+        }
+        /* цвет для трека после активации тумблера*/
+        .range:focus::-webkit-slider-runnable-track {
+            background-color: #316FEE;
+        }
+        /* настройка тумблера*/
+        .range::-webkit-slider-thumb {
+            background: #ffffff;
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+            border-radius: 100px;
+            -webkit-appearance: none;
+            box-shadow: 0px 8px 16px 0px #0000001F;
+        }
+        /* цвет для трека для Mozila*/
+        .range::-moz-range-track {
+            background-color: #DCDCDC;
+        }
+        /* трека после активации тумблера для Mozila*/
+        .range:focus::-moz-range-track {
+            background-color: #316FEE;
+        }
+        /* настройка тумблера для Mozila*/
+        .range::-moz-range-thumb {
+            background: #ffffff;
+            cursor: pointer;
+            height: 16px;
+            border-radius:100px;
+            box-shadow: 0px 8px 16px 0px #0000001F;
+            padding: 0px;
+            margin: 0px;
+        }
+    /*текст возле ползунка */
+    .range-text{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    }
+
+/* блок со всеми подписками */
+.articles{
+    margin: 32px 24px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+/* блок подписки */
+.article{
+    background-color: white;
+    padding: 24px;
+    border-radius: 16px;
+    display: flex;
+    gap: 24px;
+    box-shadow: 0px 8px 16px 0px #00000014;
+}
+
+/* блок с текстом подписки */
+.text{
+    width: 324px;
+}
+
+/* подпись подписки */
+.caption{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #999999;
+}
+
+/* заголовок подписки */
+.title{
+    font-family: Roboto-Medium, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    margin-bottom: 8px;
+}
+
+/* описание подписки */
+.desc{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color:#666666;
+    margin-bottom: 16px;
+}
+
+/* лид-абзац/список подписки */
+.lead{
+    list-style-image: url(images/galochka.png);
+    margin-left: 24px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 16px;
+}
+
+/* блок подписаться */
+.subs{
+    display: flex;
+    gap: 8px;
+}
+    /* ползунок блока подписки */
+    .range_article {
+    width: 48px;
+    height: 24px;
+    border-radius: 100px;
+    padding: 1px;
+    overflow: hidden;
+    }
+        /* цвет трека подписки */
+        .range_article::-webkit-slider-runnable-track {
+            background-color: #eeeeee;
+        }
+        /* цвет трека подписки после активации тумблера */
+        .range_article:focus::-webkit-slider-runnable-track {
+            background-color: #316FEE;
+        }
+        /* тумблер подписки */
+        .range_article::-webkit-slider-thumb {
+            background: #ffffff;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            border-radius: 100px;
+            -webkit-appearance: none;
+            box-shadow: 0px 8px 16px 0px #0000001F;
+        }
+        /* цвет трек подписки для Mozila*/
+        .range_article::-moz-range-track {
+            background-color: #eeeeee;
+        }
+        /* трек подписки после активации тумблера для Mozila*/
+        .range_article:focus::-moz-range-track {
+            background-color: #316FEE;
+        }
+        /* тумблер подписки для Mozila */
+        .range_article::-moz-range-thumb {
+            background: #ffffff;
+            cursor: pointer;
+            height: 24px;
+            border-radius:100px;
+            box-shadow: 0px 8px 16px 0px #0000001F;
+            padding: 0px;
+            margin: 0px;
+        }
+     /* текст возле ползунка подписки */
+    .range-text_article{
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        margin-top: 5px;
+    }
+
+/* картинка подписки */
+.img{
+    width: 80px; /* адаптировать размер 40х40*/
+    height: 80px;
+}
+
+/* картинка подвала */
+.footer{
+    text-align: center;
+    margin: 48px 0;
+}
+
+
