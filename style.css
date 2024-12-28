@@ -52,7 +52,7 @@ header{
 /* позиционирование картинки у логотипа */
 .logo_item{
     position: relative;
-    right: 53px;
+    right: 52px;
     z-index: 1;
 }
 
